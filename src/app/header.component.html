@@ -1,0 +1,18 @@
+<header>
+  <nav class="light-blue darken-2">
+    <div class="nav-wrapper container">
+      <a href="javascript:void(0)" class="brand-logo">AL Final Angular</a>
+      <a href="javascript:void(0)" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+      <ul class="right hide-on-med-and-down">
+        <li><a [routerLink]="''" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:true}">HOME</a></li>
+        <li><a [routerLink]="'/contact'" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:true}">CONTACT</a></li>
+        <!--<li><a [routerLink]="'/mentions'" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:true}">MENTIONS</a></li>-->
+      </ul>
+      <ul class="side-nav" id="mobile-demo">
+        <li><a [routerLink]="''" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:true}">HOME</a></li>
+        <li><a [routerLink]="'/contact'" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:true}">CONTACT</a></li>
+        <!--<li><a [routerLink]="'/mentions'" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:true}">MENTIONS</a></li>-->
+      </ul>
+    </div>
+  </nav>
+</header>
