@@ -16,23 +16,12 @@ export class HomeComponent implements OnInit {
 
   items:any[];
 
-  title = 'http works!';
-
   ngOnInit(){
     this.httpservice.getData()
       .subscribe(
         (data:any) => console.log(data)
       );
-  }
 
-  onSubmit(username:string,email:string,image:string){
-    this.httpservice.sendData({username:username,email:email,image:image})
-      .subscribe(
-        (data:any) => console.log(data)
-      );
-  }
-
-  onGetdata(){
     this.httpservice.getMydata()
       .subscribe(
 
@@ -43,6 +32,13 @@ export class HomeComponent implements OnInit {
           }
           this.items=array;
         }
+      );
+  }
+
+  onSubmit(username:string,email:string,image:string){
+    this.httpservice.sendData({username:username,email:email,image:image})
+      .subscribe(
+        (data:any) => console.log(data)
       );
   }
 
