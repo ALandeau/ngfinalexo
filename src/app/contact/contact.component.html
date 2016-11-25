@@ -1,19 +1,21 @@
 <div class="container">
   <div class="row">
     <div class="col s6 m6">
-      <input type="text" name="nom" placeholder="nom" [(ngModel)]="user.name">
+      <input type="text" name="nom" placeholder="nom" id="name" #name>
     </div>
 
     <div class="col s6 m6">
-      <input type="text" name="prenom" placeholder="prenom" [(ngModel)]="user.surname">
+      <input type="text" name="prenom" placeholder="prenom" id="nickname" #nickname>
     </div>
 
     <div class="col s12 m12">
-      <input type="submit" class="waves-effect waves-light light-blue darken-2 btn" value="Envoyer">
+      <button (click)="onSubmitUser(name.value,nickname.value)">Submit</button>
     </div>
   </div>
 
   <div class="row" id="contactuser-show">
-    <p>Votre nom est {{user.name}} {{user.surname}}</p>
+    <div *ngFor="let user of users">
+      <p>Votre nom est {{user.nom}} {{user.prenom}}</p>
+    </div>
   </div>
 </div>

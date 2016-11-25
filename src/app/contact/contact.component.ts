@@ -1,4 +1,4 @@
-import { Component} from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -6,9 +6,15 @@ import { Router, ActivatedRoute } from '@angular/router';
   templateUrl: './contact.component.html',
   styles: []
 })
-export class ContactComponent {
-  user={};
+export class ContactComponent implements OnInit {
+  users=[];
   constructor() { }
-  showuser(){
+  ngOnInit() {
+
+  }
+
+  onSubmitUser(name:string,nickname:string){
+    var user={nom: name, prenom: nickname};
+    this.users.push(user);
   }
 }
