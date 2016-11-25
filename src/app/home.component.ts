@@ -25,8 +25,8 @@ export class HomeComponent implements OnInit {
       );
   }
 
-  onSubmit(username:string,email:string){
-    this.httpservice.sendData({username:username,email:email})
+  onSubmit(username:string,email:string,image:string){
+    this.httpservice.sendData({username:username,email:email,image:image})
       .subscribe(
         (data:any) => console.log(data)
       );

@@ -24,3 +24,28 @@ export class HttpService {
       .map((response:Response)=>response.json());
   }
 }
+
+
+
+@Injectable()
+export class HttpService {
+
+  constructor(private http:Http) { }
+  getData(){
+    return this.http.get('https://gs://angularhttpal.appspot.com/images.json')
+      .map((response:Response)=>response.json());
+  }
+
+  sendData(user:any){
+    const body=JSON.stringify(user);
+    const headers=new Headers();
+    headers.append('Content-Type','application/json');
+    return this.http.post('https://gs://angularhttpal.appspot.com/images.json',body,{headers:headers})
+      .map((data:Response)=>data.json());
+  }
+
+  getMydata(){
+    return this.http.get('https://gs://angularhttpal.appspot.com/images.json')
+      .map((response:Response)=>response.json());
+  }
+}
